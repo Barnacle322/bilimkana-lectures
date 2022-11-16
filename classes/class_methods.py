@@ -10,6 +10,9 @@ class Cat:
         self.breed = breed
         self.gender = gender
 
+    def __repr__(self):
+        return f"Имя: {self.name}"
+
     def meow(self):
         if self.age > 10:
             return "Meow, motherfucker"
@@ -21,6 +24,6 @@ class Cat:
 
 
 new_cat = Cat("Мурка", 11, "Сиамская", "мужыыык")
-
+print(new_cat)
 user_input = input("Введите еду: ")
 print(new_cat.eat(food_type=user_input))

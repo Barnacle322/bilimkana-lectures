@@ -33,3 +33,5 @@ print(my_str) # => привет
 print(new_str) # => Привет
 
 print(my_str + " " + my_name) # Конкатенация
+
+
