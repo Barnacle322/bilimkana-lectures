@@ -16,6 +16,16 @@
 pip install python-telegram-bot --pre
 ```
 
+Если не работает установка откройте Windows Powershell от имени администратора
+```powershell
+set-executionpolicy remotesigned
+```
+
+Если предыдущее не сработало
+```powershell
+Set-ExecutionPolicy Unrestricted -Force
+```
+
 ## Получение токена
 
 [Получить токен можно тут](https://t.me/BotFather)
