@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -6,10 +6,11 @@ userlist = []
 
 
 @app.get("/add/<name>")
-def index(name):
-    userlist.append(name)
+def index(name: str):
+    userlist.append(name.capitalize())
     return "Added"
+
 
 @app.get("/userlist")
 def users():
-    return userlist
+    return render_template("users.html", userlist=userlist)
