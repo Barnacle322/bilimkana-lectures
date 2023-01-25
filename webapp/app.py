@@ -1,6 +1,13 @@
 from flask import Flask, render_template
+from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///students.db"
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False        
+
+db.create_all()
 
 userlist = []
 
@@ -14,3 +21,7 @@ def index(name: str):
 @app.get("/userlist")
 def users():
     return render_template("users.html", userlist=userlist)
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
