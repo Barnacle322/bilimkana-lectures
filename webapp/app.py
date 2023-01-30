@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -17,19 +17,34 @@ class Student(db.Model):
     age = db.Column(db.Integer, nullable=True)
     grade = db.Column(db.String(3), nullable=False)
 
-
-@app.get("/add/<name>")
-def index(name: str):
-    student = Student(name=name, age=18, grade="11A")
-
-    db.session.add(student)
-    db.session.commit()
-    return "Added"
+    def __repr__(self):
+        return f"Student('{self.name}', '{self.age}', '{self.grade}')"
 
 
-@app.get("/userlist")
+@app.get("/")
+def index():
+    return redirect(url_for("users"))
+
+
+@app.route("/add", methods=["GET", "POST"])
+def add():
+    if request.method == "POST":
+        name = request.form["name"]
+        age = request.form["age"]
+        grade = request.form["grade"]
+
+        student = Student(name=name, age=age, grade=grade)
+
+        db.session.add(student)
+        db.session.commit()
+
+    return render_template("add.html")
+
+
+@app.get("/users")
 def users():
-    return render_template("users.html")
+    students = db.session.query(Student).all()
+    return render_template("users.html", students=students)
 
 
 if __name__ == "__main__":
