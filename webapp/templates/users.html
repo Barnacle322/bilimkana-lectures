@@ -10,9 +10,13 @@
 </head>
 <body>
     <h1>This is a userlist page</h1>
+    <a href="/add">Add a new user</a>
     <ul>
         {% for student in students %}
-        <li>Name: {{ student.name }} | Age: {{ student.age }}</li>
+        <a href="/delete/{{ student.id }}">
+            <li>Name: {{ student.name }} | Age: {{ student.age }}</li>
+        </a>
+        <a href="/update/{{ student.id }}">Edit</a>
         {% endfor %}
     </ul>
 </body> 

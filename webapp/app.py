@@ -47,5 +47,28 @@ def users():
     return render_template("users.html", students=students)
 
 
+@app.get("/delete/<int:id>")
+def delete(id: int):
+    student = db.session.query(Student).filter(Student.id == id).first()
+    db.session.delete(student)
+    db.session.commit()
+    return redirect(url_for("users"))
+
+
+@app.route("/update/<int:id>", methods=["GET", "POST"])
+def update(id: int):
+    student = db.session.query(Student).filter(Student.id == id).first()
+
+    if request.method == "POST":
+        student.name = request.form["name"]
+        student.age = request.form["age"]
+        student.grade = request.form["grade"]
+
+        db.session.commit()
+        return redirect(url_for("users"))
+
+    return render_template("update.html", student=student)
+
+
 if __name__ == "__main__":
     app.run(debug=True)

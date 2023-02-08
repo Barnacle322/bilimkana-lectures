@@ -7,19 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Add a new student</h1>
+    <h1>Edit a student</h1>
     <a href="/">Back to userlist</a>
     <form method="POST">
         <label for="name">Name</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" value="{{ student.name }}">
 
         <label for="age">Age</label>
-        <input type="text" name="age" id="age">
+        <input type="text" name="age" id="age" value="{{ student.age }}">
 
         <label for="grade">Grade</label>
-        <input type="text" name="grade" id="grade">
+        <input type="text" name="grade" id="grade" value="{{ student.grade }}">
 
-        <button type="submit">Add</button>
+        <button type="submit">Save</button>
     </form>
 </body>
 </html>
