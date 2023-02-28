@@ -127,7 +127,7 @@ if __name__ == "__main__":
 Логика обработки сообщений
 ```python
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
-    await update.message.reply_text("Привет, вы запустили бота 10IT класса")
+    await update.message.reply_text("Привет, вы запустили бота")
 
 
 async def echo(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
