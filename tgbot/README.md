@@ -6,9 +6,31 @@
 
 [Доки](https://docs.python-telegram-bot.org/en/v20.1/)
 
-[Примеры](https://docs.python-telegram-bot.org/en/v21.1/examples.html)
+[Примеры](https://docs.python-telegram-bot.org/en/v20.1/examples.html)
 
 [Вики](https://github.com/python-telegram-bot/python-telegram-bot/wiki)
+
+## Виртуальное Окружение
+
+Windows
+```bash
+python -m venv .venv
+```
+
+MacOS/Linux
+```bash
+python3 -m venv .venv
+```
+
+Windows
+```bash
+.\.venv\Scripts\activate
+```
+
+MacOS/Linux
+```bash
+source .venv/bin/activate
+```
 
 ## Установка
 
