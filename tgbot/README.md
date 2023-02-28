@@ -4,16 +4,16 @@
 
 [Главная страница](https://python-telegram-bot.org/)
 
-[Доки](https://docs.python-telegram-bot.org/en/v20.0a6/)
+[Доки](https://docs.python-telegram-bot.org/en/v20.1/)
 
-[Примеры](https://docs.python-telegram-bot.org/en/v20.0a6/examples.html)
+[Примеры](https://docs.python-telegram-bot.org/en/v21.1/examples.html)
 
 [Вики](https://github.com/python-telegram-bot/python-telegram-bot/wiki)
 
 ## Установка
 
 ```bash
-pip install python-telegram-bot --pre
+pip install python-telegram-bot
 ```
 
 Если не работает установка откройте Windows Powershell от имени администратора
